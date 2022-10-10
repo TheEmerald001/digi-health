@@ -8,7 +8,7 @@ class RecordsController < ApplicationController
     end
 
     def show
-        record = find_record
+        record = find_b
         render json: record
     end
 

@@ -6,6 +6,9 @@ ruby "2.7.4"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
+# Use serializer for rendered data
+gem 'active_model_serializers', "~> 0.10.13"
+
 # Utilize Faker to generate random data
 gem "faker", "~> 2.18.0"
 
