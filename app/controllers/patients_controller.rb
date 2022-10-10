@@ -1,23 +1,27 @@
 class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
-    def show
-        patient = find_patient
-        render json: patient
-    end
-
+    
+    # '/patients' creates a new patient
     def create
         patient = Patient.create!(patient_params)
         render json: patient, status: :created
     end
 
+    #'/patients/:id' reads patient by id provided in params
+    def show
+        patient = find_patient
+        render json: patient
+    end
+
+    # '/patients/:id' updates patient data with id in params
     def update
         patient = find_patient
         patient.update!(patient_params)
         render json: patient
     end
 
+    # '/patients/:id' deletes patient data with id in params
     def destroy
         patient = find_patient
         patient.destroy

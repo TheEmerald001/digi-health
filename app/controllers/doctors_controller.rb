@@ -2,22 +2,31 @@ class DoctorsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-    def show
-        doctor = find_doctor
-        render json: doctor
+    # '/doctor' Displays all doctors
+    def index
+        doctors = Doctor.all
+        render json: doctors
     end
-
+    
+    # "/post" Creates a new instance of a doctor (Create)
     def create
         doctor = Doctor.create!(doctor_params)
         render json: doctor, status: :created
     end
 
+    # '/doctor/:id' displays a doctor of id in params(Read by show in rails)
+    def show
+        doctor = find_doctor
+        render json: doctor
+    end
+
+    # '/doctor/:id' edits a doctor of id in params(Update)
     def update
         doctor = find_doctor
         doctor.update!(doctor_params)
         render json: Doctor
     end
-
+    # '/doctor/:id' deletes a doctor of id in params(Delete by destroy)
     def destroy
         doctor = find_doctor
         doctor.destroy

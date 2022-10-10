@@ -1,23 +1,20 @@
 class RecordsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
+    
+    # '/records/:id' show a record with the given id
     def show
-        record = find_record
+        record = Record.find_by(params[:id])
         render json: record
     end
 
+    # '/records' create a new record
     def create
         record = record.create!(record_params)
         render json: record, status: :created
     end
 
     private
-    
-    def find_record
-        Record.find(params[:id])
-    end
-
     def record_params
         params.permit(:last_record, :patient_id, :doctor_id, :medication)
     end
