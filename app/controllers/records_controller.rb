@@ -2,11 +2,6 @@ class RecordsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-    def index
-        records = Record.all
-        render json: records
-    end
-
     def show
         record = find_record
         render json: record
@@ -15,18 +10,6 @@ class RecordsController < ApplicationController
     def create
         record = record.create!(record_params)
         render json: record, status: :created
-    end
-
-    def update
-        record = find_record
-        record.update!(record_params)
-        render json: record
-    end
-
-    def destroy
-        record = find_record
-        record.destroy
-        head :no_content
     end
 
     private
