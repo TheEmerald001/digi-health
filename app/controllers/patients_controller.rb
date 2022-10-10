@@ -2,11 +2,6 @@ class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-    def index
-        patients = Patient.all
-        render json: patients
-    end
-
     def show
         patient = find_patient
         render json: patient

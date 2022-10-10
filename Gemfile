@@ -9,6 +9,10 @@ gem "rails", "~> 7.0.4"
 # Utilize Faker to generate random data
 gem "faker", "~> 2.18.0"
 
+#Use Active Record to serialize your controllers
+gem "active_model_serializers"
+
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
