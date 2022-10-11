@@ -1,4 +1,6 @@
 class DoctorsController < ApplicationController
+    before_action :authorize
+    skip_before_action :authorize, only: [:index, :create]
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
@@ -40,7 +42,7 @@ class DoctorsController < ApplicationController
     end
 
     def doctor_params
-        params.permit(:first_name, :last_name, :image_url, :description, :location)
+        params.permit(:first_name, :last_name, :image_url, :description, :location, :username, :password, :password_confirmation)
     end
 
     def render_not_found_response
@@ -49,5 +51,9 @@ class DoctorsController < ApplicationController
 
     def render_unprocessable_entity_response(invalid)
         render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    end
+
+    def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
     end
 end
