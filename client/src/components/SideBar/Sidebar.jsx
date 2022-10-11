@@ -1,8 +1,9 @@
 import React from 'react'
 import './sidebar.css';
+import{FaHospital,FaTwitter,FaFacebookF,FaInstagram,FaPinterest,FaWhatsapp}from "react-icons/fa"
 import {NavLink} from 'react-router-dom';
 
-const Sidebar = ({Children}) => {
+const Sidebar = ({children}) => {
     const menuItem =[
         {
             path:'/',
@@ -33,6 +34,11 @@ const Sidebar = ({Children}) => {
   return (
     <div className='container'>
         <div className="sidebar">
+            <div className='top'>
+            <div className='logo'><FaHospital/></div>
+            <h1 className='head'>Digi-health</h1>
+            </div>
+
         {
             menuItem.map((item,index) =>(
                 <NavLink to={item.path} key={index} className="link" activeclassName="active">
@@ -41,8 +47,16 @@ const Sidebar = ({Children}) => {
                 </NavLink>
             ))
         }
+             <div className='contacts'>
+            <FaTwitter/>
+            <FaFacebookF/>
+            <FaInstagram/>
+            <FaPinterest/>
+            <FaWhatsapp/>
         </div>
-        <main>{Children}</main>
+        </div>
+        <main>{children}</main>
+   
     </div>
   )
 }
