@@ -5,27 +5,27 @@ const Sidebar = ({Children}) => {
     const menuItem =[
         {
             path:'/',
-            name:"",
+            name:"Doctors",
             icon:""
         },
         {
-            path:'/',
-            name:"",
+            path:'/Gynecologist',
+            name:"Gynecologist",
             icon:""
         },
         {
-            path:'/',
-            name:"",
+            path:'/Neurologist',
+            name:"Neurologist",
             icon:""
         },
         {
-            path:'/',
-            name:"",
+            path:'/Cardiologist',
+            name:"Cardiologist",
             icon:""
         },
         {
-            path:'/',
-            name:"",
+            path:'/Appointments',
+            name:"Appointments",
             icon:""
         }
     ]
@@ -34,7 +34,7 @@ const Sidebar = ({Children}) => {
         <div style={{width:"200px"}} className="sidebar">
         {
             menuItem.map((item,index) =>(
-                <NavLink>
+                <NavLink to={item.path} key={index} className="link" activeclassName="active">
                     <div className='icon'>{item.icon}</div>
                     <div className='link_text'>{item.name}</div>
                 </NavLink>
