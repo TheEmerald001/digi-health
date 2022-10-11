@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "./Sidebar"
-import Doctors from "./Doctors"
+import Sidebar from "./components/SideBar/Sidebar"
+import Doctors from "./components/Doctors/Doctors"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
