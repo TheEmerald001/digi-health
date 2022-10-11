@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = ({Children}) => {
     const menuItem =[
         {
             path:'/',
@@ -30,7 +30,19 @@ const Sidebar = () => {
         }
     ]
   return (
-    <div>Sidebar</div>
+    <div className='container'>
+        <div style={{width:"200px"}} className="sidebar">
+        {
+            menuItem.map((item,index) =>(
+                <NavLink>
+                    <div className='icon'>{item.icon}</div>
+                    <div className='link_text'>{item.name}</div>
+                </NavLink>
+            ))
+        }
+        </div>
+        <main>{Children}</main>
+    </div>
   )
 }
 
