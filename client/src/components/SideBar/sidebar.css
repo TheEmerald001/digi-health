@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+}
+
+main{
+    width: 100%;
+    padding: 20px
+}
+
+.sidebar{
+    background: rgb(2, 113, 2);
+    color: #fff;
+    height: 100vh;
+    width: 200px;
+}
+
+.link{
+    text-decoration: none;
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s; 
+}
+
+.link:hover{
+   background: yellowgreen;
+   color: #fff;
+   transition: all 0.5s; 
+}
+
+.active{
+    background: yellowgreen;
+    color: #fff;
+}
+
+.icon, .link_text{
+    font-size: 20px;
+}

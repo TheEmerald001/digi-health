@@ -1,4 +1,5 @@
 import React from 'react'
+import './sidebar.css';
 import {NavLink} from 'react-router-dom';
 
 const Sidebar = ({Children}) => {
@@ -31,7 +32,7 @@ const Sidebar = ({Children}) => {
     ]
   return (
     <div className='container'>
-        <div style={{width:"200px"}} className="sidebar">
+        <div className="sidebar">
         {
             menuItem.map((item,index) =>(
                 <NavLink to={item.path} key={index} className="link" activeclassName="active">
