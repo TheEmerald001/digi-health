@@ -3,8 +3,9 @@ import Appointment from "../Appointment/Appointment"
 import './appointment.css';
 
 
-const Appointments = () => {
+const Appointments = ({onUpdateMessage}) => {
     const [appointments, getAppointments] = useState([]);
+
     useEffect(() => {
         fetch("https://safe-reaches-42746.herokuapp.com/comments")
           .then((r) => r.json())
@@ -14,8 +15,15 @@ const Appointments = () => {
       }, [appointments]);
 
       const viewAppointments = appointments.map((appointment) => (
-        <Appointment key={appointment.id} appointment={appointment}  />
+        <Appointment key={appointment.id} appointment={appointment} onDelete={handleDeleteAppointments} onUpdateMessage={onUpdateMessage}/>
       ));
+
+      function handleDeleteAppointments(deletedappointments) {
+        const updatedAppointments = appointments.filter(
+          (appointment) => appointment.id !== deletedappointments.id
+        );
+        getAppointments(updatedAppointments);
+      }
 
   return (
     <div className="appointments">
