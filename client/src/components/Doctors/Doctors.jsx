@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import './doctors.css';
+import Card from "../Cards/Card"
 import {BiSearchAlt} from 'react-icons/bi'
 
 const API_URL ="https://www.omdbapi.com?apikey=b6003d8a";
@@ -33,10 +34,10 @@ const Doctors = () => {
           </button>
         </div>
 
-    {doctors?. length > 0?(
-      <div className='container'>
+    {doctors?.length > 0?(
+      <div className='containers'>
       {doctors.map((doctor)=>(
-        // <Card/>
+        <Card doctor={doctor}/>
       ))}
       </div> 
     ) : (

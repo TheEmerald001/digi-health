@@ -37,7 +37,6 @@
 /* App file */
 
 .App {
-  /* background: var(--background); */
   color: var(--font-color);
   font-family: 'Inter', sans-serif;
 }
