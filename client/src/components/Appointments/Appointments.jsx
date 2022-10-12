@@ -1,12 +1,12 @@
 import React,{useState, useEffect} from 'react'
+import Appointment from "../Appointment/Appointment"
 import './appointment.css';
 
-const API_URL = "https://safe-reaches-42746.herokuapp.com/comments";
 
 const Appointments = () => {
     const [appointments, getAppointments] = useState([]);
     useEffect(() => {
-        fetch("")
+        fetch("https://safe-reaches-42746.herokuapp.com/comments")
           .then((r) => r.json())
           .then((data) => {
             getAppointments(data);
@@ -14,7 +14,7 @@ const Appointments = () => {
       }, [appointments]);
 
       const viewAppointments = appointments.map((appointment) => (
-        // <Comment key={appointment.id} appointment={appointment}  />
+        <Appointment key={appointment.id} appointment={appointment}  />
       ));
 
   return (
@@ -27,7 +27,7 @@ const Appointments = () => {
     <h2>Action</h2>
         </div>
         <div className="app-container">
-      {appointments?.length > 0 ? viewAppointments : <h2>No reviews found</h2>}
+      {appointments?.length > 0 ? viewAppointments : <h2>No Appointments found</h2>}
     </div>
 
     </div>
