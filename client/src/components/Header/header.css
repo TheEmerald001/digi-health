@@ -1,0 +1,12 @@
+.header{
+    padding: 20px;
+    border: 1px solid rgb(0, 255, 72);
+    border-radius: 10px;
+}
+
+.view{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: rgb(0, 255, 72);
+}

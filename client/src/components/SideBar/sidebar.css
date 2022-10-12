@@ -55,6 +55,6 @@ main{
 
 .contacts{
     display: flex;
-    margin-top: 80%;
+    margin-top: 90%;
     justify-content: space-around;
 }
