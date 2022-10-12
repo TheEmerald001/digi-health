@@ -15,7 +15,7 @@ const Sidebar = ({children}) => {
             icon:<GiDoctorFace/>,
         },
         {
-            path:'/Page',
+            path:'/Form',
             name:"Apply Doctor",
             icon:<FaWpforms/>
         },
