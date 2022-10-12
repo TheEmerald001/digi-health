@@ -3,7 +3,7 @@ import './doctors.css';
 import Card from "../Cards/Card"
 import {BiSearchAlt} from 'react-icons/bi'
 
-const API_URL ="https://www.omdbapi";
+const API_URL ="https://www.omdbapi.com?apikey=b6003d8a";
 
 const Doctors = () => {
   const [searchTerm, setSearchTerm] = useState("")

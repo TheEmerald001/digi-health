@@ -19,7 +19,7 @@ const Overlay = ({ show, doctor, onClose,handleClick }) => {
               <h3>{doctor.Year}</h3>
               <h4>{doctor.Type}</h4>
               <a href={"previewLink"}>
-                <button className='flex' onClick={() => handleClick(doctor)}>Add to cart</button>
+                <button className='flex' onClick={() => handleClick(doctor)}>Book an appointment</button>
               </a>
               <h4 className="description">{doctor.Type}</h4>
             </div>
