@@ -3,7 +3,7 @@ import './doctors.css';
 import Card from "../Cards/Card"
 import {BiSearchAlt} from 'react-icons/bi'
 
-const API_URL ="https://www.omdbapi.com?apikey=b6003d8a";
+const API_URL ="https://www.omdbapi";
 
 const Doctors = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -11,13 +11,14 @@ const Doctors = () => {
 
  useEffect(()=>{
   searchDoctor("Batman")
- }) 
+ }, []) 
 
-  const searchDoctor = async(title) => {
-    const response = await fetch(`${API_URL}&s=${title}`)
-    const data = await response.json()
-    setDoctors(data.Search)
-  }
+ const searchDoctor = async (title) => {
+  const response = await fetch(`${API_URL}&s=${title}`);
+  const data = await response.json();
+
+  setDoctors(data.Search);
+};
 
 
   return (

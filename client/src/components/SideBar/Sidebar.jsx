@@ -15,14 +15,14 @@ const Sidebar = ({children}) => {
             icon:<GiDoctorFace/>,
         },
         {
+            path:'/Page',
+            name:"Apply Doctor",
+            icon:<FaWpforms/>
+        },
+        {
             path:'/Appointments',
             name:"Appointments",
             icon:<IoNewspaperSharp/>
-        },
-        {
-            path:'/Neurologist',
-            name:"Apply Doctor",
-            icon:<FaWpforms/>
         },
         {
             path:'/Appointments',
