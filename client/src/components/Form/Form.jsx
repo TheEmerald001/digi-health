@@ -26,6 +26,10 @@ const Form = () => {
 
        <h2>Professional information</h2>
        <div className='professional-info'>
+       <div className='form-control'>
+        <label>Doctor's Name</label>
+        <input placeholder='Doctors Name 'required/>
+        </div>
         <div className='form-control'>
         <label>Specialization</label>
         <input placeholder='Specialization'required/>

@@ -1,6 +1,6 @@
 .show-data{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .app-container{
@@ -8,7 +8,15 @@
     margin: auto;
 }
 
-.app-container div{
+.app-container .contents{
     border-bottom: 1px solid green;
     padding-bottom: 1em;
+}
+
+.not-found{
+    width: 100%;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

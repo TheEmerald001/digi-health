@@ -23,15 +23,20 @@ const Appointments = () => {
         <div className='show-data'>
     <h2>Doctor</h2>
     <h2>Appointment Date</h2>
+    <h2>Name(s)</h2>
     <h2>City</h2>
     <h2>Action</h2>
         </div>
         <div className="app-container">
-      {appointments?.length > 0 ? viewAppointments : <h2>No Appointments found</h2>}
+      {appointments?.length > 0 ? viewAppointments : (
+      <div className='not-found'>
+      <h2>No Appointments found</h2>
+      </div>
+      )}
     </div>
-
-    </div>
+</div>
   )
 }
 
 export default Appointments
+
