@@ -1,0 +1,14 @@
+.show-data{
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-container{
+    width: 100%;
+    margin: auto;
+}
+
+.app-container div{
+    border-bottom: 1px solid green;
+    padding-bottom: 1em;
+}
