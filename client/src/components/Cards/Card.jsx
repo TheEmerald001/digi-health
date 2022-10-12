@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './cards.css';
-// import Overlay from './Overlay';
+import Overlay from '../Overlay/Overlay';
 
 const Card = ({ doctor}) => {
     const{imdbID, Year, Poster, Title, Type } = doctor;
@@ -28,6 +28,7 @@ const Card = ({ doctor}) => {
       </div>
       
     </div>
+    <Overlay show={show} doctor={item} onClose={() => setShow(false)} />
     </>
   );
 }
