@@ -1,15 +1,50 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './doctors.css';
 import {BiSearchAlt} from 'react-icons/bi'
 
+const API_URL ="https://www.omdbapi.com?apikey=b6003d8a";
+
 const Doctors = () => {
+  const [searchTerm, setSearchTerm] = useState("")
+  const [doctors, setDoctors] = useState([])
+
+ useEffect(()=>{
+  searchDoctor("Batman")
+ }) 
+
+  const searchDoctor = async(title) => {
+    const response = await fetch(`${API_URL}&s=${title}`)
+    const data = await response.json()
+    setDoctors(data.Search)
+  }
+
+
   return (
     <div className='doctors'>
         <div className='search'>
-          <input placeholder='Search for doctors'/>
-          <button className='search-btn'><BiSearchAlt/></button>
+
+          <input 
+          value ={searchTerm}
+          onChange ={(e)=> setSearchTerm(e.target.value)}
+          placeholder='Search for doctors'/>
+          <button className='search-btn' 
+          onClick={() =>searchDoctor(searchTerm)}>
+            <BiSearchAlt/>
+          </button>
         </div>
-    </div>
+
+    {doctors?. length > 0?(
+      <div className='container'>
+      {doctors.map((doctor)=>(
+        // <Card/>
+      ))}
+      </div> 
+    ) : (
+      <div className='empty'>
+      <h2>Please wait...</h2>
+      </div>
+    )}
+        </div>
   )
 }
 
