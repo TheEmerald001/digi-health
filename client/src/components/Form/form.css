@@ -31,7 +31,6 @@ form {
   }
   
   input[type="submit"] {
-    display: inline-block;
     float: right;
     background: black;
     color: #fff;
