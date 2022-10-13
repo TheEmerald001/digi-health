@@ -1,4 +1,5 @@
 import React from 'react'
+import './update.css';
 
 const Update = ({id,author,onUpdateAppointment}) => {
     const [messageBody, setMessageBody] = useState(author);

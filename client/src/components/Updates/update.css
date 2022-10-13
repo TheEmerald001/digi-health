@@ -1,0 +1,27 @@
+.form-control {
+    margin: 20px 0;
+  }
+  
+.form-control input {
+    width: 97%;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    display: inline-block;
+    float: right;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 80px 55px 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+  }
