@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './update.css';
 
 const Update = ({id,author,onUpdateAppointment}) => {
@@ -21,13 +21,14 @@ const Update = ({id,author,onUpdateAppointment}) => {
     }
   return (
     <form className='form' onSubmit={handleFormSubmit}>
-             <div className='form-control'>
+             <div className='formControl'>
         <input placeholder='Name'
               onChange={(e) =>setMessageBody(e.target.value)}
-              value={first}
+              value={author}
         required/>
+                <input type='update' value='Update' className="btn-block"/>
         </div>
-        <input type='submit' value='Update' className="btn-block"/>
+
     </form>
   )
 }

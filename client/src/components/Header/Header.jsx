@@ -1,12 +1,12 @@
 import React from 'react'
 import './header.css';
-import {FaStethoscope} from "react-icons/fa"
+import {IoIosContact} from "react-icons/io"
 
 const Header = () => {
   return (
     <div className='header'>
         <div className='view'>
-            <FaStethoscope/>
+            <IoIosContact/>
             <h3>Welcome</h3>
         </div>
     </div>

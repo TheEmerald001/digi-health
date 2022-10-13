@@ -10,10 +10,12 @@
 }
 
 .action .delete{
+    color: red;
     font-size: 18px;
     margin-bottom: 1.5rem;
 }
 
 .action .patch{
+    color: rgb(0, 255, 145);
     font-size: 18px;
 }

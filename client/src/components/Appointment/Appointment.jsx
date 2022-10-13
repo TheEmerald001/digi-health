@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './appoint.css';
 import Update from "../Updates/Update";
 import { AiFillDelete } from 'react-icons/ai';
 import {RiQuillPenFill} from "react-icons/ri";
 
 const Appointment = ({appointment, onDelete, onUpdateAppointment}) => {
-    const { food, author, updated_at:updatedAt } =appointment;
+    const {id, food, author, updated_at:updatedAt } =appointment;
     const timestamp = new Date(updatedAt).toLocaleTimeString();
     const [isEditing, setIsEditing] = useState(false);
 

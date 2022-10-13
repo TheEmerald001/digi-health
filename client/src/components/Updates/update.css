@@ -1,9 +1,10 @@
-.form-control {
+.formControl {
     margin: 20px 0;
+    display: flex;
   }
 
-.form-control input {
-    width: 97%;
+  .formControl input {
+    width: 90%;
     height: 40px;
     margin: 5px;
     padding: 5px;
@@ -11,13 +12,13 @@
     border-radius: 5px;
   }
   
-  input[type="submit"] {
+  input[type="update"] {
+    width: 10%;
     float: right;
     background: black;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 80px 55px 10px 0px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;

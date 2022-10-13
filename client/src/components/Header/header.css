@@ -1,6 +1,6 @@
 .header{
     padding: 20px;
-    border: 1px solid rgb(0, 255, 72);
+    border: 1px solid rgb(0, 255, 145);
     border-radius: 10px;
 }
 
@@ -8,5 +8,5 @@
     display: flex;
     align-items: center;
     font-size: 25px;
-    color: rgb(0, 255, 72);
+    color: rgb(0, 255, 145);
 }

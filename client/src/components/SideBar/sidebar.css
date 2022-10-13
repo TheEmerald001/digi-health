@@ -8,9 +8,9 @@ main{
 }
 
 .sidebar{
-    background: rgb(2, 113, 2);
+    background: rgb(0, 255, 145);
     color: #fff;
-    height: 100vh;
+    height: 150vh;
     width: 400px;
 }
 
@@ -39,13 +39,13 @@ main{
 }
 
 .link:hover{
-   background: yellowgreen;
+   background: rgb(0, 98, 255);
    color: #fff;
    transition: all 0.5s; 
 }
 
 .active{
-    background: yellowgreen;
+    background: rgb(0, 98, 255);
     color: #fff;
 }
 
@@ -55,6 +55,6 @@ main{
 
 .contacts{
     display: flex;
-    margin-top: 90%;
+    margin-top: 190%;
     justify-content: space-around;
 }
