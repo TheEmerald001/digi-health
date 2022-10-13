@@ -5,7 +5,7 @@ import style from '../css/home.module.css';
 const Home = () => (
   <section className={style.container}>
     <div className={style.logo}>
-      <h1 className={style.title}>WE CARE</h1>
+      <h1 className={style.title}>Digi Health</h1>
       <p className={style.motto}>Meet your doctor today...</p>
     </div>
     <nav className={style.nav}>
