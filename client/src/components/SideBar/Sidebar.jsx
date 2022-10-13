@@ -2,7 +2,7 @@ import React from 'react'
 import './sidebar.css';
 import{FaHospital,FaTwitter,FaFacebookF,FaInstagram,FaPinterest,FaWhatsapp,FaWpforms}from "react-icons/fa"
 import {GiDoctorFace} from "react-icons/gi"
-import {RiLogoutBoxLine} from "react-icons/ri"
+
 import {IoNewspaperSharp} from "react-icons/io5"
 import {MdEmail} from "react-icons/md"
 import {NavLink} from 'react-router-dom';
@@ -11,23 +11,18 @@ const Sidebar = ({children}) => {
     const menuItem =[
         {
             path:'/',
-            name:"Doctors",
+            name:"View all doctors",
             icon:<GiDoctorFace/>,
         },
         {
             path:'/Form',
-            name:"Apply Doctor",
+            name:"book an appointment",
             icon:<FaWpforms/>
         },
         {
             path:'/Appointments',
-            name:"Appointments",
+            name:"My Appointments",
             icon:<IoNewspaperSharp/>
-        },
-        {
-            path:'/Appointments',
-            name:"Logout",
-            icon:<RiLogoutBoxLine/>
         }
     ]
   return (

@@ -5,12 +5,11 @@ import { AiFillDelete } from 'react-icons/ai';
 import {RiQuillPenFill} from "react-icons/ri";
 
 const Appointment = ({appointment, onDelete, onUpdateAppointment}) => {
-    const {id, food, author, updated_at:updatedAt } =appointment;
-    const timestamp = new Date(updatedAt).toLocaleTimeString();
+    const {id, patient_id, doctor_id,reason } =appointment;
     const [isEditing, setIsEditing] = useState(false);
 
     function deleteAppointments() {
-      fetch(`/${appointment.id}`, {
+      fetch(`/appointments/${appointment.id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -30,14 +29,13 @@ const Appointment = ({appointment, onDelete, onUpdateAppointment}) => {
     {isEditing ? (
     <Update
     id={id}
-     author={ author}
+     reason={ reason}
      onUpdateAppointment={handleUpdateAppointment}
     />) : (
           <div className='contents'>
-    <h3>{food}</h3>
-    <p>{timestamp}</p>
-    <p> {author}</p>
-    <p>Nairobi</p>
+    <h3>{patient_id}</h3>
+    <p>{doctor_id}</p>
+    <p>{reason}</p>
     <div className='action'>
         <button className='delete'onClick={deleteAppointments}><AiFillDelete/></button>
         <button className='patch' onClick={() => setIsEditing((isEditing) => !isEditing)}><RiQuillPenFill/></button>

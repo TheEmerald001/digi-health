@@ -1,19 +1,19 @@
 import React,{useState} from 'react'
 import './update.css';
 
-const Update = ({id,author,onUpdateAppointment}) => {
-    const [messageBody, setMessageBody] = useState(author);
+const Update = ({id,reason,onUpdateAppointment}) => {
+    const [messageBody, setMessageBody] = useState(reason);
 
     function handleFormSubmit(e) {
       e.preventDefault();
   
-      fetch(`/${id}`, {
+      fetch(`/appointments/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            author: messageBody,
+            reason: messageBody,
         }),
       })
         .then((r) => r.json())
@@ -24,11 +24,9 @@ const Update = ({id,author,onUpdateAppointment}) => {
              <div className='formControl'>
         <input placeholder='Name'
               onChange={(e) =>setMessageBody(e.target.value)}
-              value={author}
-        required/>
-                <input type='update' value='Update' className="btn-block"/>
+              value={messageBody}/>
+              <input type='update'  value='Update' className="btn-block"/>
         </div>
-
     </form>
   )
 }

@@ -6,22 +6,22 @@ const Overlay = ({ show, doctor, onClose,handleClick }) => {
   if (!show) {
     return null;
   }
-  let thumbnail = doctor.Poster;
+  let thumbnail = doctor.image_url;
   return (
     <>
       <div className="overlay">
         <div className="overlay-inner">
         <button className="close" onClick={onClose}><AiFillCloseCircle/></button>
           <div className="inner-box">
-            <img src={thumbnail} alt={doctor.Title} />
+            <img src={thumbnail} alt={doctor.first_name} />
             <div className="info">
-              <h2>{doctor.Title}</h2>
-              <h3>{doctor.Year}</h3>
-              <h4>{doctor.Type}</h4>
+              <h2>{doctor.first_name}</h2>
+              <h4>{doctor.last_name}</h4>
+              <h3>{doctor.location}</h3>
+              <h4 className="description">{doctor.description}</h4>
               <a href={"previewLink"}>
                 <button className='flex' onClick={() => handleClick(doctor)}>Book an appointment</button>
               </a>
-              <h4 className="description">{doctor.Type}</h4>
             </div>
           </div>
         </div>

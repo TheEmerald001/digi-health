@@ -3,34 +3,36 @@ import './doctors.css';
 import Card from "../Cards/Card"
 import {BiSearchAlt} from 'react-icons/bi'
 
-const API_URL ="https://www.omdbapi.com?apikey=b6003d8a";
 
 const Doctors = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [doctors, setDoctors] = useState([])
 
- useEffect(()=>{
-  searchDoctor("Batman")
- }, []) 
+  useEffect(() => {
+    fetch("/doctors")
+      .then((r) => r.json())
+      .then((data) => {
+        setDoctors(data);
+      });
+  }, [doctors]);
 
- const searchDoctor = async (title) => {
-  const response = await fetch(`${API_URL}&s=${title}`);
-  const data = await response.json();
+//  const searchDoctor = async (first_name) => {
+//   const response = await fetch(`${API_URL}`);
+//   const data = await response.json();
 
-  setDoctors(data.Search);
-};
+//   setDoctors(data.Search);
+// };
 
 
   return (
     <div className='doctors'>
         <div className='search'>
-
           <input 
           value ={searchTerm}
           onChange ={(e)=> setSearchTerm(e.target.value)}
           placeholder='Search for doctors'/>
           <button className='search-btn' 
-          onClick={() =>searchDoctor(searchTerm)}>
+          >
             <BiSearchAlt/>
           </button>
         </div>

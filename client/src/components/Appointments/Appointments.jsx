@@ -7,12 +7,13 @@ const Appointments = ({onUpdateMessage}) => {
     const [appointments, getAppointments] = useState([]);
 
     useEffect(() => {
-        fetch("https://safe-reaches-42746.herokuapp.com/comments")
+        fetch("/appointments")
           .then((r) => r.json())
           .then((data) => {
             getAppointments(data);
           });
       }, [appointments]);
+
 
       const viewAppointments = appointments.map((appointment) => (
         <Appointment key={appointment.id} appointment={appointment} onDelete={handleDeleteAppointments} onUpdateMessage={onUpdateMessage}/>
@@ -29,10 +30,9 @@ const Appointments = ({onUpdateMessage}) => {
     <div className="appointments">
         <h1>My Appointments</h1>
         <div className='show-data'>
-    <h2>Doctor</h2>
-    <h2>Appointment Date</h2>
-    <h2>Name(s)</h2>
-    <h2>City</h2>
+    <h2>Patient_id</h2>
+    <h2>Doctor_id</h2>
+    <h2>Reason</h2>
     <h2>Action</h2>
         </div>
         <div className="app-container">
