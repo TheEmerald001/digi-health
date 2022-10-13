@@ -12,7 +12,10 @@ puts "
         last_name: Faker::Name.last_name,
         image_url: Faker::LoremFlickr.image,
         description: "I treat diseases of the heart",
-        location: Faker::Address.full_address
+        location: Faker::Address.full_address,
+        username: Faker::Name.first_name,
+        password: "test",
+        password_confirmation: "test"
 
     )
     
@@ -24,7 +27,10 @@ end
         last_name: Faker::Name.last_name,
         age: Faker::Date.birthday(min_age: 18, max_age: 65),
         image_url: Faker::LoremFlickr.image,
-        location: Faker::Address.full_address
+        location: Faker::Address.full_address,
+        username: Faker::Name.first_name,
+        password: "1234",
+        password_confirmation: "1234"
     )
 end
 20.times do

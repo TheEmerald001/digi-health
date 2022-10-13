@@ -2,6 +2,16 @@ class RecordsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     
+    # This route shall be used to render to a doctor, if any, a patients past medical records
+    def index
+        if params[:appointment_id]
+            patient = Appointment.find_by_id(params[:appointment_id]).patient_id
+            records = Record.find_by_id(patient)
+        else
+            records = render json: {error: "No Records Found for patient"}
+        end
+        render json: records         
+    end
     # '/records/:id' show a record with the given id
     def show
         record = Record.find_by(params[:id])
