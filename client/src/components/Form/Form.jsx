@@ -52,7 +52,7 @@ const Form = () => {
   }
   return (
     <form className='form' onSubmit={HandleSubmit}>
-        <h2>Personal information</h2>
+        <h2> Information</h2>
        <div className='personal-info'>
         <div className='form-control'>
         <label>Patient</label>

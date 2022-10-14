@@ -32,6 +32,8 @@ const Appointments = ({onUpdateMessage}) => {
         <div className='show-data'>
     <h2>Patient_id</h2>
     <h2>Doctor_id</h2>
+    <h2>Start</h2>
+    <h2>End</h2>
     <h2>Reason</h2>
     <h2>Action</h2>
         </div>

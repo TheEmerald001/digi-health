@@ -1,7 +1,7 @@
 .appointments{
     /* border: 1px solid red; */
     overflow: scroll;
-    height: 89vh;
+    height: 88vh;
 }
 
 .show-data{

@@ -5,8 +5,10 @@ import { AiFillDelete } from 'react-icons/ai';
 import {RiQuillPenFill} from "react-icons/ri";
 
 const Appointment = ({appointment, onDelete, onUpdateAppointment}) => {
-    const {id, patient_id, doctor_id,reason } =appointment;
+    const {id, patient_id, doctor_id,start,end,reason } =appointment;
     const [isEditing, setIsEditing] = useState(false);
+    const startTime = new Date(start).toLocaleTimeString();
+    const endTime = new Date(end).toLocaleTimeString();
 
     function deleteAppointments() {
       fetch(`/appointments/${appointment.id}`, {
@@ -35,6 +37,8 @@ const Appointment = ({appointment, onDelete, onUpdateAppointment}) => {
           <div className='contents'>
     <h3>{patient_id}</h3>
     <p>{doctor_id}</p>
+    <p>{startTime}</p>
+    <p>{endTime}</p>
     <p>{reason}</p>
     <div className='action'>
         <button className='delete'onClick={deleteAppointments}><AiFillDelete/></button>

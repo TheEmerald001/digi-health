@@ -25,7 +25,7 @@ const Update = ({id,reason,onUpdateAppointment}) => {
         <input placeholder='Name'
               onChange={(e) =>setMessageBody(e.target.value)}
               value={messageBody}/>
-              <input type='update'  value='Update' className="btn-block"/>
+              <input type='submit'  value='Update' className="btn-block"/>
         </div>
     </form>
   )
