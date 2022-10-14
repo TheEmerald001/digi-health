@@ -38,8 +38,8 @@ end
     Appointment.create(
         patient_id: rand(1..20),
         doctor_id: rand(1..10),
-        start: Faker::Date.between(from: '2022-10-11', to: '2022-10-20'),
-        end: Faker::Date.between(from: '2022-10-11', to: '2022-10-20'),
+        start: Faker::Time.backward(days: 14, period: :morning, format: :short),
+        end: Faker::Time.backward(days: 14, period: :evening, format: :short),
         reason: "Medical care"
     )
 end
