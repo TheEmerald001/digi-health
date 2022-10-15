@@ -29,7 +29,7 @@ export default function Login({ setUser }) {
       // console.log("User created:", data);
       setUser(data);
       setErrors("");
-      window.location = "/jobs-page";
+      window.location = "/";
     } else {
       setErrors(data.error);
     }
@@ -39,6 +39,7 @@ export default function Login({ setUser }) {
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={(e) => handleSubmit(e)}>
         <div className="Auth-form-content">
+        <h2 className="Auth-form-title">Digi Health</h2>
           <h3 className="Auth-form-title">Log In</h3>
           <div className="text-center">
             Not registered yet?{" "}
@@ -66,6 +67,7 @@ export default function Login({ setUser }) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+         
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Login
@@ -75,7 +77,7 @@ export default function Login({ setUser }) {
             Forgot <a href="#">password?</a>
           </p> */}
 
-          {errors != "" ? (
+          {errors !== "" ? (
             <ul style={{ color: "red" }}>
               <li>{errors}</li>
             </ul>

@@ -28,7 +28,7 @@ const Navbar = ({ setUser, user }) => {
 
           {user ? (
             <>
-              <NavLink to="/post-job">Add Job</NavLink>
+              <NavLink to="/"></NavLink>
             </>
           ) : (
             <></>

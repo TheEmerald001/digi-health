@@ -37,8 +37,11 @@ export default function SignUp() {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={(e) => handleSubmit(e)}>
+      <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Digi Health</h3>
+          </div>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
+          <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center">
             Already registered?{" "}
             <span className="link-primary">
@@ -50,7 +53,7 @@ export default function SignUp() {
             <input
               type="text"
               className="form-control mt-1"
-              placeholder="e.g Jane Doe"
+              placeholder="e.g Alex Gichohi"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -69,6 +72,16 @@ export default function SignUp() {
             <label>Password</label>
             <input
               type="password"
+              className="form-control mt-1"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Confirm Password</label>
+            <input
+              type="confirm password"
               className="form-control mt-1"
               placeholder="Password"
               value={password}
