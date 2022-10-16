@@ -14,7 +14,7 @@ const Doctors = () => {
       .then((data) => {
         setDoctors(data);
       });
-  }, [doctors]);
+  }, []);
 
 //  const searchDoctor = async (first_name) => {
 //   const response = await fetch(`${API_URL}`);
